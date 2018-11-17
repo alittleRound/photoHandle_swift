@@ -1,0 +1,29 @@
+PODS:
+  - Alamofire (4.7.3)
+  - LeanCloud (13.0.0):
+    - LeanCloud/Foundation (= 13.0.0)
+    - LeanCloud/LocalStorage (= 13.0.0)
+    - LeanCloud/Storage (= 13.0.0)
+  - LeanCloud/Foundation (13.0.0)
+  - LeanCloud/LocalStorage (13.0.0):
+    - LeanCloud/Foundation
+  - LeanCloud/Storage (13.0.0):
+    - Alamofire (~> 4.7.3)
+    - LeanCloud/Foundation
+    - LeanCloud/LocalStorage
+
+DEPENDENCIES:
+  - LeanCloud (~> 13.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - LeanCloud
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  LeanCloud: 93670d0250e19cb5e7750b6bcd3f671559dbc8b9
+
+PODFILE CHECKSUM: d25690ab234574e06568ad48e96c7d29b3df6aaf
+
+COCOAPODS: 1.5.3

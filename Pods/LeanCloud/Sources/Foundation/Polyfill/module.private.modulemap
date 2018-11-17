@@ -1,0 +1,4 @@
+module Polyfill_Private {
+    header "Polyfill.h"
+    export *
+}
