@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import LeanCloud
+
 
 class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
@@ -52,6 +54,36 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             self.present(alert, animated: true, completion: nil)
             return
         }
+        
+        
+        let user = LCUser()
+        user.username = LCString((usernameTxt.text?.lowercased())!)
+        user.email = LCString((emailTxt.text?.lowercased())!)
+        user.password = LCString(passwordTxt.text!)
+        user["fullname"] = LCString((fullnameTxt.text?.lowercased())!)
+        user["bio"] = LCString(bioTxt.text!)
+        user["web"] = LCString((webTxt.text?.lowercased())!)
+        user["gender"] = LCString("")
+        
+        user.signUp()
+        
+        
+        if user.signUp().isSuccess{
+            print("注册成功！")
+        }else{
+            print("注册失败！")
+            print(user.signUp().error)
+        }
+        
+        
+        /*let avaData = avaImg.image?.jpegData(compressionQuality: 0.5)
+        //let avaFile = LCFile()
+        
+        let avaImgObject = LCObject(className: "avaImg")
+        avaImgObject.set("img", value: avaData)
+        
+        user["ava"] = avaImgObject*/
+        
         
     }
     
