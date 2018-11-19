@@ -84,6 +84,11 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         user["ava"] = avaImgObject*/
         
+        UserDefaults.standard.set(user.username, forKey: "username")
+        UserDefaults.standard.synchronize()
+        
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.login()
         
     }
     

@@ -15,7 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    
+    func login()  {
+        
+        let username:String? = UserDefaults.standard.string(forKey: "username")
+        
+        if username != nil{
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let myTabBar = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+            window?.rootViewController = myTabBar
+        }
+    }
 
 
 
@@ -25,11 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             id:  "8qfkHmnJu8hzQ2cxCPn6s4Lw-gzGzoHsz", /* Your app ID */
             key: "aqB4ap69p6nFamgpbWQ9AuIA" /* Your app key */
         )
+        
+        login()
 
-        
-        
-        
-        return true
+       return true
     }
     
     
